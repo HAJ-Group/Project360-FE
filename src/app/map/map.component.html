@@ -5,13 +5,13 @@
   <agm-marker  [latitude]="l"
                [longitude]="lo"></agm-marker>
 </agm-map>
-
+<br>
 
 
 <agm-map
   [latitude]="lat"
   [longitude]="long"
-  [zoom]="zoom"  >
+  [zoom]="zoom"  (mapClick)="getlocation($event)" >
   <agm-marker *ngFor="let l of map" latitude="{{l.latitude}}"
               longitude="{{l.longitude}}"></agm-marker>
 </agm-map>

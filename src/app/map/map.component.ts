@@ -31,6 +31,10 @@ lo:number;
    this.l=event.coords.lat;
    this.lo=event.coords.lng;
 }
+getlocation(event){
+
+  console.log(event);
+}
   constructor() {
 
   }
