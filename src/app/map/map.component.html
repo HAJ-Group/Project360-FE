@@ -1,7 +1,17 @@
 <agm-map
   [latitude]="lat"
   [longitude]="long"
+  [zoom]="zoom"  (mapClick)="onchoselocation($event)">
+  <agm-marker  [latitude]="l"
+               [longitude]="lo"></agm-marker>
+</agm-map>
+
+
+
+<agm-map
+  [latitude]="lat"
+  [longitude]="long"
   [zoom]="zoom"  >
-      <agm-marker *ngFor="let l of map" latitude="{{l.latitude}}"
-      longitude="{{l.longitude}}"></agm-marker>
+  <agm-marker *ngFor="let l of map" latitude="{{l.latitude}}"
+              longitude="{{l.longitude}}"></agm-marker>
 </agm-map>
