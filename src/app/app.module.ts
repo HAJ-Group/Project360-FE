@@ -13,6 +13,8 @@ import {AnnonceModel} from './model.ts/annonce-model';
 import {AnnoncerDataService} from './service/data/annoncer-data.service';
 import {OktaAuthModule} from '@okta/okta-angular';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MapComponent } from './map/map.component';
+import {AgmCoreModule} from "@agm/core";
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FooterComponent,
     HomeComponent,
     DashboardComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     ReactiveFormsModule,
     OktaAuthModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCySXcUIQ1PxRKaj8SvHKzOimkrAZZnoJc',
+      libraries: ['places']
+    })
+
   ],
   providers: [
     AnnonceDataService,
