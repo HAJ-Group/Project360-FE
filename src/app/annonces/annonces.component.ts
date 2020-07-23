@@ -2,7 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {AnnonceDataService} from '../service/data/annonce-data.service';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {AnnonceModel} from '../model.ts/annonce-model';
+import {Router} from '@angular/router';
+import {CITIES} from '../app.constants';
+import {AnnounceModel} from '../model.ts/announce-model';
+
 
 @Component({
   selector: 'app-annonces',
@@ -10,27 +13,31 @@ import {AnnonceModel} from '../model.ts/annonce-model';
   styleUrls: ['./annonces.component.css']
 })
 export class AnnoncesComponent implements OnInit {
-  annonces: AnnonceModel[];
+  annonces: AnnounceModel[];
+
   filters = {
     keyword: '',
     status: '',
     type: '',
     city: '',
-    surface: '',
-    pieces: '',
+    surface: 0,
+    pieces: 20,
     budget_min: 1,
-    budget_max: 99999999999999
-
+    budget_max: 100000
   };
   cities: string[];
 
-  constructor(private annonceData: AnnonceDataService) {
-    this.cities = annonceData.cities;
+  constructor(private annonceData: AnnonceDataService, private router: Router) {
+    this.cities = CITIES;
+    const k = this.router.getCurrentNavigation().extras.state;
+    this.filters.keyword = k !== undefined ? k.keyword : '';
+    // console.log(this.router.getCurrentNavigation().extras.state.keyword); // should log out 'bar'
+
   }
 
 
   ngOnInit(): void {
-    this.getAnnonces();
+    this.getAnnoncesByFilters();
   }
 
   getAnnonces() {
@@ -45,8 +52,7 @@ export class AnnoncesComponent implements OnInit {
 
   getAnnoncesByFilters() {
     this.annonceData.getAnnoncesByFilters(this.filters).subscribe(data => {
-      console.log(data);
-      this.annonces = data['1'];
+      this.annonces = data['data'];
     });
   }
 }
