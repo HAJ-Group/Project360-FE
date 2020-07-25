@@ -29,10 +29,9 @@ export class AnnoncesComponent implements OnInit {
 
   constructor(private annonceData: AnnonceDataService, private router: Router) {
     this.cities = CITIES;
-    const k = this.router.getCurrentNavigation().extras.state;
+    let k = this.router.getCurrentNavigation().extras.state;
+    console.log('k', k);
     this.filters.keyword = k !== undefined ? k.keyword : '';
-    // console.log(this.router.getCurrentNavigation().extras.state.keyword); // should log out 'bar'
-
   }
 
 
@@ -52,7 +51,7 @@ export class AnnoncesComponent implements OnInit {
 
   getAnnoncesByFilters() {
     this.annonceData.getAnnoncesByFilters(this.filters).subscribe(data => {
-      this.annonces = data['data'];
+      this.annonces = data['1'];
     });
   }
 }

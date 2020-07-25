@@ -2,20 +2,23 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {AnnounceModel} from '../../model.ts/announce-model';
+import {arrayify} from 'tslint/lib/utils';
 
 
 const SERVER = 'http://localhost:8000/api/annonces';
 
 @Injectable()
-export class AnnonceDataService{
+export class AnnonceDataService {
 
   private headers;
   private annonces: any[];
   private a: any;
+  private num: number;
 
   constructor(
     private http: HttpClient
-  ) {}
+  ) {
+  }
 
 
   getAnnonces(): Observable<AnnounceModel[]> {
@@ -37,18 +40,18 @@ export class AnnonceDataService{
 
   createAnnounce(username, announce, images) {
     const formData = new FormData();
-    for (let i = 0; i < images.length; i ++){
-      formData.append('image' + ( i + 1), images[i], images[i].name);
+    for (let i = 0; i < images.length; i++) {
+      formData.append('image' + (i + 1), images[i], images[i].name);
     }
     // tslint:disable-next-line:forin
-    for (const field in announce){
+    for (const field in announce) {
       formData.append('' + field, announce[field]);
     }
 
     return this.http.post(`http://localhost:8000/api/users/${username}/announces`, formData);
   }
 
-  getSpecificAnnounces($username){
+  getSpecificAnnounces($username) {
     return this.http.get<AnnounceModel[]>(`http://localhost:8000/api/users/${$username}/announces`);
   }
 

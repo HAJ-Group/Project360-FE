@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   annonces: AnnounceModel[];
   premiumAnnonces: AnnounceModel[];
   errorMessage: string;
-  keyword: string;
+  key: string;
 
   constructor(private annonceData: AnnonceDataService, private router: Router) {
   }
@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit {
   getAnnonces() {
     this.annonceData.getAnnonces().subscribe(data => {
       this.annonces = data['1'];
-      console.log(this.annonces);
     });
   }
 
@@ -44,7 +43,7 @@ export class HomeComponent implements OnInit {
   }
 
   getSearchKey() {
-    const key = 'keey';
-    this.router.navigate(['/annonces'], {state: {keyword: this.keyword}});
+    console.log('key ', this.key);
+    this.router.navigate(['/annonces'], {state: {keyword: this.key}});
   }
 }
