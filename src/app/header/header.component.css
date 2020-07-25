@@ -31,6 +31,7 @@
   font-family: "Agency FB", serif;
   font-size: 40px;
   margin-bottom: 5%;
+  line-height: 1;
 }
 
 .get-started{
@@ -48,6 +49,16 @@
   background-color: rgba(38, 50, 92, 0.8);
   cursor: pointer;
   opacity: 0.6;
+}
+
+.btn {
+  padding: 15px 30px !important;
+  margin: 0 !important;
+}
+
+.bg-none {
+  background-image: none !important;
+  min-width: 370px;
 }
 
 @media screen and (max-width: 1400px) {

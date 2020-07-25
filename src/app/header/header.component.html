@@ -76,7 +76,17 @@
     <div class="page-header login-page" style="background-image: url('../../assets/pictures/header/header.jpeg'); background-size: cover; background-position: top center;">
       <div id="header-description" class="center-phrase">
         <p>Bienvenue au meilleur site internet de partage d'annonce immobilière</p>
-        <span class="get-started">Commencer votre visite</span>
+        <form id="search" class=" d-flex flex-column justify-content-center rounded">
+          <h1 class="title text-white display-4 text-center font-weight-bold">Cherchez Announces</h1>
+          <div class="form-row d-flex align-self-center align-items-center bg-white rounded w-auto">
+            <input [(ngModel)]="keyword" id="key" class="form-control form-control-sm bg-none ml-3 mr-3 w-75" type="text" placeholder="Search"
+                   aria-label="Search">
+            <div class="form-row d-flex justify-content-end">
+              <button class="btn btn-primary stretched-link btn-search" (click)="getSearchKey()">Search</button>
+            </div>
+          </div>
+        </form>
+        <!-- here put-->
       </div>
     </div>
   </div>
