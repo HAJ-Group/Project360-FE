@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {AnnonceDataService} from '../service/data/annonce-data.service';
-import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {CITIES} from '../app.constants';
 import {AnnounceModel} from '../model.ts/announce-model';
@@ -20,10 +18,10 @@ export class AnnoncesComponent implements OnInit {
     status: '',
     type: '',
     city: '',
-    surface: 0,
-    pieces: 20,
+    surface: 0.0,
     budget_min: 1,
-    budget_max: 100000
+    budget_max: 100000,
+    pieces: 20.00,
   };
   cities: string[];
 
@@ -32,7 +30,6 @@ export class AnnoncesComponent implements OnInit {
     const k = this.router.getCurrentNavigation().extras.state;
     this.filters.keyword = k !== undefined ? k.keyword : '';
     // console.log(this.router.getCurrentNavigation().extras.state.keyword); // should log out 'bar'
-
   }
 
 
@@ -51,8 +48,9 @@ export class AnnoncesComponent implements OnInit {
   }
 
   getAnnoncesByFilters() {
-    this.annonceData.getAnnoncesByFilters(this.filters).subscribe(data => {
-      this.annonces = data['data'];
+    this.annonceData.getAnnoncesByFilters(this.filters).subscribe(success => {
+      this.annonces = success['data'];
+      console.log(this.annonces);
     });
   }
 }
