@@ -204,7 +204,7 @@ export class HeaderComponent implements OnInit {
   }
 
   getSearchKey() {
-    this.router.navigate(['/annonces'], {state: {keyword: this.keyword}});
+    this.router.navigate(['/announces_filter'], {state: {keyword: this.keyword}});
   }
 
 }

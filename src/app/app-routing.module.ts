@@ -15,7 +15,7 @@ import {AnnouncesFilterComponent} from './announces/announces-filter/announces-f
 
 const routes: Routes = [
   {path: '', component: HomeComponent, canActivate: [ReverseRouteGuardService]},
-  {path: 'announces', component: AnnouncesFilterComponent},
+  {path: 'announces_filter', component: AnnouncesFilterComponent},
   {path: 'dashboard', component : DashboardComponent , children : [
       {path: '', component: DashboardHomeComponent, outlet: 'dashboard'},
       {path: 'profile', component: ProfileComponent, outlet: 'dashboard'},
