@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+// @ts-ignore
 import {CITIES, STATES, TYPES} from '../../../app.constants';
 import {AnnounceModel} from '../../../model.ts/announce-model';
 import {AnnonceDataService} from '../../../service/data/annonce-data.service';

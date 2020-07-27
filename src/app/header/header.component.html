@@ -79,7 +79,7 @@
         <p>Bienvenue au meilleur site internet de partage d'annonce immobilière</p>
         <!--<span class="get-started">Commencer votre visite</span>-->
         <div class="d-flex justify-content-center">
-          <input [(ngModel)]="keyword" class="form-search p-3 bg-white border-0 text-center opacity-4" style="width: 700px; border-bottom-left-radius: 50px; border-top-left-radius: 50px; font-size: 20px" placeholder="search...">
+          <input [(ngModel)]="keyword" class="form-search p-3 bg-white border-0 text-center opacity-4" style="width: 700px; border-bottom-left-radius: 50px; border-top-left-radius: 50px; font-size: 20px" placeholder="search..." [ngModelOptions]="{standalone: true}" aria-label="Search">
           <button (click)="getSearchKey()" class="material-icons bg-white text-white border-0 opacity-4 text-primary" style="font-size: 40px; cursor: pointer; border-bottom-right-radius: 50px; border-top-right-radius: 50px">search</button>
         </div>
       </div>
