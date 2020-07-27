@@ -20,8 +20,8 @@ import { AnnounceDetailsComponent } from './announces/list-announces/announce-de
 import { DashboardHomeComponent } from './dashboard/dashboard-home/dashboard-home.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
 import { DashboardHeaderComponent } from './dashboard/dashboard-header/dashboard-header.component';
-import { AnnoncesComponent } from './annonces/annonces.component';
 import {AnnonceDataService} from './service/data/annonce-data.service';
+import { AnnouncesFilterComponent } from './announces/announces-filter/announces-filter.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import {AnnonceDataService} from './service/data/annonce-data.service';
     DashboardHomeComponent,
     ProfileComponent,
     DashboardHeaderComponent,
-    AnnoncesComponent,
+    AnnouncesFilterComponent,
   ],
   imports: [
     BrowserModule,

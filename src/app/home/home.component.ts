@@ -44,6 +44,6 @@ export class HomeComponent implements OnInit {
 
   getSearchKey() {
     console.log('key ', this.key);
-    this.router.navigate(['/annonces'], {state: {keyword: this.key}});
+    this.router.navigate(['/announces'], {state: {keyword: this.key}});
   }
 }

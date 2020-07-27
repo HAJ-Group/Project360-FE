@@ -10,12 +10,12 @@ import {AddAnnounceComponent} from './announces/list-announces/add-announce/add-
 import {EditAnnounceComponent} from './announces/list-announces/edit-announce/edit-announce.component';
 import {ListAnnouncesComponent} from './announces/list-announces/list-announces.component';
 import {AnnounceDetailsComponent} from './announces/list-announces/announce-details/announce-details.component';
-import {AnnoncesComponent} from './annonces/annonces.component';
+import {AnnouncesFilterComponent} from './announces/announces-filter/announces-filter.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent, canActivate: [ReverseRouteGuardService]},
-  {path: 'annonces', component: AnnoncesComponent},
+  {path: 'announces', component: AnnouncesFilterComponent},
   {path: 'dashboard', component : DashboardComponent , children : [
       {path: '', component: DashboardHomeComponent, outlet: 'dashboard'},
       {path: 'profile', component: ProfileComponent, outlet: 'dashboard'},
