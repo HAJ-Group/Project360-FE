@@ -11,11 +11,13 @@ import {EditAnnounceComponent} from './announces/list-announces/edit-announce/ed
 import {ListAnnouncesComponent} from './announces/list-announces/list-announces.component';
 import {AnnounceDetailsComponent} from './announces/list-announces/announce-details/announce-details.component';
 import {AnnouncesFilterComponent} from './announces/announces-filter/announces-filter.component';
+import {MapComponent} from './map/map.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent, canActivate: [ReverseRouteGuardService]},
   {path: 'announces_filter', component: AnnouncesFilterComponent},
+  {path: 'map', component: MapComponent},
   {path: 'dashboard', component : DashboardComponent , children : [
       {path: '', component: DashboardHomeComponent, outlet: 'dashboard'},
       {path: 'profile', component: ProfileComponent, outlet: 'dashboard'},

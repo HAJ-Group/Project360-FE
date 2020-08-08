@@ -22,6 +22,8 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
 import { DashboardHeaderComponent } from './dashboard/dashboard-header/dashboard-header.component';
 import {AnnonceDataService} from './service/data/annonce-data.service';
 import { AnnouncesFilterComponent } from './announces/announces-filter/announces-filter.component';
+import { MapComponent } from './map/map.component';
+import {MarkerService} from './marker.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { AnnouncesFilterComponent } from './announces/announces-filter/announces
     ProfileComponent,
     DashboardHeaderComponent,
     AnnouncesFilterComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ import { AnnouncesFilterComponent } from './announces/announces-filter/announces
   providers: [
     AnnonceDataService,
     AnnoncerDataService,
+    MarkerService,
     {
       provide: HTTP_INTERCEPTORS, useClass: HttpAuthenticationInterceptorService, multi: true
     }
