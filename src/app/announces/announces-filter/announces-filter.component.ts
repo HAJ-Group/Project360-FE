@@ -33,11 +33,11 @@ export class AnnouncesFilterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAnnoncesByFilters();
+    this.getAnnouncesByFilters();
   }
 
   getAnnonces() {
-    this.announceData.getAnnonces().subscribe(data => {
+    this.announceData.getAnnounces().subscribe(data => {
       this.announces = data['1'];
     });
   }
@@ -46,10 +46,11 @@ export class AnnouncesFilterComponent implements OnInit {
     console.log(event.target.value);
   }
 
-  getAnnoncesByFilters() {
-    this.announceData.getAnnoncesByFilters(this.filters).subscribe(data => {
+  getAnnouncesByFilters() {
+    this.announceData.getAnnouncesByFilters(this.filters).subscribe(data => {
       this.announces = data['1'];
     });
   }
+
 
 }

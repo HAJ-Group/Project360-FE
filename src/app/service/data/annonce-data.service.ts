@@ -21,7 +21,7 @@ export class AnnonceDataService {
   }
 
 
-  getAnnonces(): Observable<AnnounceModel[]> {
+  getAnnounces(): Observable<AnnounceModel[]> {
     return this.http.get<AnnounceModel[]>(SERVER + '/');
   }
 
@@ -56,8 +56,12 @@ export class AnnonceDataService {
   }
 
 
-  getAnnoncesByFilters(filters) {
+  getAnnouncesByFilters(filters) {
     return this.http.post<AnnounceModel[]>(SERVER + '/byFilters/', filters);
+  }
+
+  getAnnounceByPosition(){
+    return this.http.get<AnnounceModel[]>(SERVER + '/coordinates');
   }
 }
 
