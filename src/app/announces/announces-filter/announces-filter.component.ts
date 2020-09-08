@@ -47,7 +47,8 @@ export class AnnouncesFilterComponent implements OnInit {
 
   getAnnouncesByFilters() {
     this.announceData.getAnnouncesByFilters(this.filters).subscribe(data => {
-      this.announces = data['1'];
+      // @ts-ignore
+      this.announces = data.data;
     });
   }
 
