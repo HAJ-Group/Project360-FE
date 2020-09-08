@@ -8,7 +8,8 @@ export class AnnounceModel {
     public price: number,
     public address: string,
     public city: string,
-    public positionMap: string,
+    // tslint:disable-next-line:variable-name
+    public position_map: string,
     public status: string,
     public rent: string,
     public premium: boolean,

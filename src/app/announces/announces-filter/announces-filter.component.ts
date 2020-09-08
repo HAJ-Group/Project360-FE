@@ -28,7 +28,6 @@ export class AnnouncesFilterComponent implements OnInit {
   constructor(private announceData: AnnonceDataService, private router: Router) {
     this.cities = CITIES;
     let k = this.router.getCurrentNavigation().extras.state;
-    console.log('k', k);
     this.filters.keyword = k !== undefined ? k.keyword : '';
   }
 

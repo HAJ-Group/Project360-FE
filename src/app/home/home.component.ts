@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   getAnnonces() {
-    this.annonceData.getAnnonces().subscribe(data => {
+    this.annonceData.getAnnounces().subscribe(data => {
       this.annonces = data['1'];
     });
   }
