@@ -1,0 +1,23 @@
+{
+  "keyword": "keyword",
+  "status": "status",
+  "placeholder": "Enter your Keyword...",
+  "all": "All",
+  "rent": "Rent",
+  "sale": "Sale",
+  "category": "Category",
+  "categories": "All Categories",
+  "apartment": "Apartment",
+  "lot": "Lot",
+  "cafe": "Cafe",
+  "house": "House",
+  "garage": "Garage",
+  "factory": "Factory",
+  "building": "Building",
+  "city": "City",
+  "cities": "All Cities",
+  "announcesPage": "Browse Announces",
+  "register": "Register",
+  "login": "Login"
+}
+

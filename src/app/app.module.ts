@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AnnoncerDataService} from './service/data/annoncer-data.service';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -24,6 +24,9 @@ import {AnnonceDataService} from './service/data/annonce-data.service';
 import { AnnouncesFilterComponent } from './announces/announces-filter/announces-filter.component';
 import { MapComponent } from './map/map.component';
 import {MarkerService} from './marker.service';
+import { MenuComponent } from './menu/menu.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,7 @@ import {MarkerService} from './marker.service';
     DashboardHeaderComponent,
     AnnouncesFilterComponent,
     MapComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,14 @@ import {MarkerService} from './marker.service';
     FormsModule,
     ReactiveFormsModule,
     OktaAuthModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     AnnonceDataService,
@@ -63,3 +74,8 @@ import {MarkerService} from './marker.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

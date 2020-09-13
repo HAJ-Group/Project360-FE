@@ -49,7 +49,7 @@ export class MapComponent implements OnInit {
 
     const geocoder = new MapboxGeocoder({
       accessToken: Mapboxgl.accessToken, // Set the access token
-      placeholder: '     Search announces',
+      placeholder: '     Search' ,
       mapboxgl: Mapboxgl, // Set the mapbox-gl instance
       marker: false, // Do not use the default marker style
     });
